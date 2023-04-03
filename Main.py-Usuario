@@ -1,0 +1,16 @@
+import csv
+
+# Pedir al usuario que ingrese el nombre de usuario, la contraseña y el correo electrónico
+nombre_usuario = input('Ingrese su nombre de usuario: ')
+contraseña = input('Ingrese su contraseña: ')
+correo_electronico = input('Ingrese su correo electrónico: ')
+
+# Abrir el archivo CSV en modo 'a' para agregar al final del archivo
+with open('usuarios.csv', 'a', newline='') as archivo:
+    # Crear un objeto writer de CSV para escribir en el archivo
+    writer = csv.writer(archivo, delimiter=',')
+    # Escribir una nueva fila en el archivo con los datos del usuario
+    writer.writerow([nombre_usuario, contraseña, correo_electronico])
+
+# Confirmar al usuario que los datos se han guardado correctamente
+print('Los datos se han guardado correctamente.')
